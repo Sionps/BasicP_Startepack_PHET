@@ -26,5 +26,7 @@ class Hello {
 
         myDog.bark();
         myDog.fetch("ball");
+
+        System.out.println(myDog.getAge());
     }
 }
