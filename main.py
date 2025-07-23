@@ -12,7 +12,8 @@ while True:
         break
     
     if choice == 2 :
-        while monster_hp > 0:
+        select_numtoatk = int(input("เลือกจำนวนการโจมตี  "))
+        for select in range(select_numtoatk):
             print(f"มอนสเตอร์ HP: {monster_hp}")
             weapon = input("เลือกอาวุธ (sword/bow/staff): ").strip().lower()
             if weapon in equipment:
