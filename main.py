@@ -24,3 +24,9 @@ while True:
                     monster_hp = 20
             else:
                 print("อาวุธไม่ถูกต้อง")
+        print(f"มอนเตอร์เหลือ HP: {monster_hp}")
+    if monster_hp == 0 :
+        print("มอนสเตอร์ถูกทำลายแล้ว!")
+        break
+    else:
+        print("คุณตาย")
