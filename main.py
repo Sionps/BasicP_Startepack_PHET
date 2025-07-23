@@ -1,23 +1,25 @@
-x = int(input())
-y = 0
+monster_hp = 100
+equipment = {
+    "sword": {"damage": 20,},
+    "bow": {"damage": 15,},
+    "staff": {"damage": 10,}}
 
-if x < 5:
-    y = 0
-elif 5 <= x <= 10:
-    y = 10
-elif 51 <= x <= 100:
-    y = 15
-elif 101 <= x <= 300:
-    y = 25
-elif 301 <= x <= 500:
-    y = 35
-else:
-    y = 45
-
-vat = (y * 7) / 100
-total = y + vat
-
-print(f"{x} กิโลเมตร")
-print(f"{y} บาท")
-print(f"ภาษีมูลค่าเพิ่ม 7%: {vat:.2f} บาท")
-print(f"รวมเป็นเงิน: {total:.2f} บาท")
+while True:    
+    choice = int(input("1. ออกจากเกม\n2. ต่อสู้กับมอนสเตอร์\nเลือก: "))
+    
+    if choice == "1":
+        print("ออกจากเกม")
+        break
+    
+    if choice == 2 :
+        while monster_hp > 0:
+            print(f"มอนสเตอร์ HP: {monster_hp}")
+            weapon = input("เลือกอาวุธ (sword/bow/staff): ").strip().lower()
+            if weapon in equipment:
+                damage = equipment[weapon]["damage"]
+                monster_hp -= damage
+                print(f"โจมตีด้วย {weapon} ทำความเสียหาย {damage} HP")
+                if monster_hp < 0:
+                    monster_hp = 20
+            else:
+                print("อาวุธไม่ถูกต้อง")
